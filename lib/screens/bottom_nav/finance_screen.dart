@@ -15,8 +15,9 @@ class _FinanceScreenState extends State<FinanceScreen> {
       body: CustomScrollView(
         slivers: [
           StandartAppBar(
-            title: Text('Финансы'),
-          )
+            title: const Text('Финансы'),
+          ),
+          SliverToBoxAdapter()
         ],
       ),
     );

@@ -2,6 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const String apiUrl = "https://test-tiksee.ru/api/";
+
+const String authToken =
+    '08v3v5028vn0q3498f1h03r9v1j304f98j23d913nf02498b29b04bg8u2v09b';
+
 const BorderRadius radius = BorderRadius.all(
   Radius.circular(10),
 );

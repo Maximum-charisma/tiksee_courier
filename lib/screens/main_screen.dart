@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:provider/provider.dart';
 import 'package:tiksee_courier/screens/bottom_nav/account_screen.dart';
 import 'package:tiksee_courier/screens/bottom_nav/finance_screen.dart';
 import 'package:tiksee_courier/screens/bottom_nav/orders_screen.dart';
+import 'package:tiksee_courier/services/prefs_handler.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

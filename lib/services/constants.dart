@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 const String apiUrl = "https://test-tiksee.ru/api/";
 
 const String authToken =
-    '08v3v5028vn0q3498f1h03r9v1j304f98j23d913nf02498b29b04bg8u2v09b';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImVtYWlsIjoidGVzdEB0ZXN0LnJ1Iiwicm9sZSI6ImNvdXJpZXIiLCJpYXQiOjE2NDM4NzQ5NDZ9.UF8eBYsl8tCzoK3mS4MNYxhOZuZUQE6MBcKubylgvcw';
 
 const BorderRadius radius = BorderRadius.all(
   Radius.circular(10),

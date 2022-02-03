@@ -13,7 +13,7 @@ class TextFieldWidget extends StatelessWidget {
     this.maxLength,
     this.maxLines = 1,
     this.readOnly,
-    this.textCapitalization = TextCapitalization.sentences,
+    this.textCapitalization = TextCapitalization.none,
     this.password = false,
     this.textAlign = TextAlign.start,
     this.onChanged,

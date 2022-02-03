@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tiksee_courier/screens/main_screen.dart';
 import 'package:tiksee_courier/services/app_bar.dart';
+import 'package:tiksee_courier/services/models/auth.dart';
 import 'package:tiksee_courier/services/navigator.dart';
 import 'package:tiksee_courier/services/network.dart';
+import 'package:tiksee_courier/services/prefs_handler.dart';
 import 'package:tiksee_courier/services/settings_card.dart';
 import 'package:tiksee_courier/services/text_field.dart';
 
@@ -19,6 +22,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<DataProvider>(context);
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -53,7 +57,7 @@ class _AuthScreenState extends State<AuthScreen> {
             child: SettingsCard(
               icon: null,
               text: 'Войти',
-              onTap: () => Navigator().nextPage(context, MainScreen()),
+              onTap: () => auth(provider),
             ),
           ),
         ],
@@ -61,12 +65,16 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
-  void auth() async {
+  void auth(DataProvider provider) async {
     if (_emailTextField.text.isNotEmpty && _passwordTextField.text.isNotEmpty) {
       var result = await NetHandler.authCourier(
           context, _emailTextField.text, _passwordTextField.text);
       print(result);
+
+      if (result != null) {
+        provider.setCourier(
+            Auth(token: result.token, secretRoute: result.secretRoute));
+      }
     }
-    Navigator().nextPage(context, MainScreen());
   }
 }

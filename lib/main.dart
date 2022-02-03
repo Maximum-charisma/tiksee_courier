@@ -9,7 +9,7 @@ void main() {
       theme: lightTheme,
       darkTheme: darkTheme,
       debugShowCheckedModeBanner: false,
-      home: const MainScreen(),
+      home: const AuthScreen(),
     ),
   );
 }

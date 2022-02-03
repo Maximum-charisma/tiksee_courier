@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:tiksee_courier/screens/bottom_nav/account_screen.dart';
 import 'package:tiksee_courier/screens/bottom_nav/finance_screen.dart';
 import 'package:tiksee_courier/screens/bottom_nav/orders_screen.dart';
@@ -12,15 +13,15 @@ class MainScreen extends StatefulWidget {
 
 final List<BottomNavigationBarItem> _tabBar = [
   const BottomNavigationBarItem(
-    icon: Icon(Icons.list_alt_outlined),
+    icon: Icon(LineIcons.checkCircle),
     label: "Заказы",
   ),
   const BottomNavigationBarItem(
-    icon: Icon(Icons.money_rounded),
+    icon: Icon(LineIcons.coins),
     label: "Финансы",
   ),
   const BottomNavigationBarItem(
-    icon: Icon(Icons.man_outlined),
+    icon: Icon(LineIcons.userCircle),
     label: "Аккаунт",
   ),
 ];
@@ -45,10 +46,10 @@ class _MainScreenState extends State<MainScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Color.fromRGBO(255, 87, 87, 1),
+        selectedItemColor: Theme.of(context).primaryColor,
         onTap: (index) {
           setState(() {
             _tabController.index = index;

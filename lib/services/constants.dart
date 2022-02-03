@@ -19,8 +19,8 @@ const List<BoxShadow> shadow = [
 final lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: const Color.fromRGBO(64, 158, 255, 1),
-  backgroundColor: Colors.white,
-  scaffoldBackgroundColor: Color.fromRGBO(242, 242, 247, 1),
+  backgroundColor: Color.fromRGBO(242, 242, 247, 1),
+  scaffoldBackgroundColor: Colors.white,
   cardColor: Colors.white,
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.white,

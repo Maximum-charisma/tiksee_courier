@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tiksee_courier/screens/main_screen.dart';
 import 'package:tiksee_courier/services/app_bar.dart';
+import 'package:tiksee_courier/services/navigator.dart';
 import 'package:tiksee_courier/services/settings_card.dart';
 import 'package:tiksee_courier/services/text_field.dart';
 
@@ -45,7 +47,9 @@ class _AuthScreenState extends State<AuthScreen> {
             child: SettingsCard(
               icon: null,
               text: 'Войти',
-              onTap: () {},
+              onTap: () {
+                Navigator().nextPage(context, MainScreen());
+              },
             ),
           ),
         ],

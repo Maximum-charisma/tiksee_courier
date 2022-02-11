@@ -26,20 +26,17 @@ final lightTheme = ThemeData(
   primaryColor: const Color.fromRGBO(64, 158, 255, 1),
   backgroundColor: Color.fromRGBO(242, 242, 247, 1),
   scaffoldBackgroundColor: Colors.white,
-  cardColor: Colors.white,
+  cardColor: Color.fromRGBO(242, 242, 247, 1),
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.white,
     foregroundColor: Colors.black,
     shadowColor: Colors.black.withOpacity(0.2),
-    titleTextStyle: GoogleFonts.comfortaa(
+    titleTextStyle: TextStyle(
       color: Colors.black,
       fontSize: 18,
     ),
   ),
-  textTheme: TextTheme(
-    bodyText1: GoogleFonts.comfortaa(),
-    bodyText2: GoogleFonts.comfortaa(),
-  ).apply(
+  textTheme: TextTheme(bodyText1: TextStyle(height: 17)).apply(
     bodyColor: Colors.black,
     displayColor: Colors.black,
   ),
@@ -56,15 +53,12 @@ final darkTheme = ThemeData(
     backgroundColor: Colors.black,
     foregroundColor: Colors.white,
     shadowColor: Colors.black.withOpacity(0.2),
-    titleTextStyle: GoogleFonts.comfortaa(
-      color: const Color.fromRGBO(64, 158, 255, 1),
+    titleTextStyle: TextStyle(
+      color: Colors.white,
       fontSize: 18,
     ),
   ),
-  textTheme: TextTheme(
-    bodyText1: GoogleFonts.comfortaa(),
-    bodyText2: GoogleFonts.comfortaa(),
-  ).apply(
+  textTheme: TextTheme(bodyText1: TextStyle(height: 17)).apply(
     bodyColor: Colors.white,
     displayColor: Colors.white,
   ),

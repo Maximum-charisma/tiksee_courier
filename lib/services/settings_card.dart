@@ -7,11 +7,13 @@ class SettingsCard extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.text,
+    required this.color,
     required this.onTap,
   }) : super(key: key);
 
   final IconData? icon;
   final String text;
+  final Color? color;
   final Function() onTap;
 
   @override
@@ -20,7 +22,7 @@ class SettingsCard extends StatelessWidget {
       height: 55,
       margin: const EdgeInsets.fromLTRB(15, 15, 15, 0),
       child: Material(
-        color: Theme.of(context).primaryColor,
+        color: color ?? Theme.of(context).primaryColor,
         borderRadius: radius,
         child: InkWell(
           borderRadius: radius,
@@ -29,7 +31,10 @@ class SettingsCard extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
-                  color: Theme.of(context).backgroundColor, fontSize: 17),
+                  color: color != null
+                      ? Theme.of(context).appBarTheme.foregroundColor
+                      : Theme.of(context).backgroundColor,
+                  fontSize: 17),
             ),
           ),
         ),

@@ -42,7 +42,7 @@ class TextFieldWidget extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(15, 15, 15, 0),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).cardColor,
         borderRadius: constants.radius,
       ),
       child: TextField(

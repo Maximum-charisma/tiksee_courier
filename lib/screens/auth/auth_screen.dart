@@ -25,6 +25,7 @@ class _AuthScreenState extends State<AuthScreen> {
     var provider = Provider.of<DataProvider>(context);
     return Scaffold(
       body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
           StandartAppBar(
             title: const Text('Авторизация'),
@@ -36,7 +37,9 @@ class _AuthScreenState extends State<AuthScreen> {
                 height: 100,
                 width: 100,
                 margin: const EdgeInsets.fromLTRB(0, 60, 0, 50),
-                child: Image.asset('lib/images/logo.png'),
+                child: Theme.of(context).brightness == Brightness.light
+                    ? Image.asset('lib/images/logo.png')
+                    : Image.asset('lib/images/logo_white.png'),
               ),
             ),
           ),
@@ -57,6 +60,7 @@ class _AuthScreenState extends State<AuthScreen> {
             child: SettingsCard(
               icon: null,
               text: 'Войти',
+              color: null,
               onTap: () => auth(provider),
             ),
           ),

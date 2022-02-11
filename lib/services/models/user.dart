@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-User userFromJson(String str) => User.fromJson(json.decode(str));
+Courier courierFromJson(String str) => Courier.fromJson(json.decode(str));
 
-String userToJson(User data) => json.encode(data.toJson());
+String courierToJson(Courier data) => json.encode(data.toJson());
 
-class User {
-  User({
+class Courier {
+  Courier({
     required this.secretRoute,
     required this.id,
     required this.address,
@@ -47,7 +47,7 @@ class User {
   dynamic isConfirmed;
   dynamic isBooker;
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
+  factory Courier.fromJson(Map<String, dynamic> json) => Courier(
         secretRoute: json["secret_route"],
         id: json["id"],
         address: json["address"],

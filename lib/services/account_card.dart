@@ -3,9 +3,11 @@ import 'package:skeleton_text/skeleton_text.dart';
 import 'package:tiksee_courier/services/constants.dart';
 
 class AccountCard extends StatefulWidget {
-  const AccountCard({Key? key, required this.phone, required this.email})
+  const AccountCard(
+      {Key? key, required this.phone, required this.email, this.name})
       : super(key: key);
 
+  final String? name;
   final String? phone;
   final String? email;
 
@@ -20,57 +22,55 @@ class _AccountCardState extends State<AccountCard> {
       margin: const EdgeInsets.all(15),
       width: double.infinity,
       height: 120,
+      padding: EdgeInsets.only(left: 15),
       decoration: BoxDecoration(
-          borderRadius: radius, color: Theme.of(context).backgroundColor),
-      child: Row(
+          borderRadius: radius, color: Theme.of(context).cardColor),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-              child: Image.asset(
-                'lib/images/account.png',
-                width: 70,
-              )),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
+          Row(
             children: [
-              if (widget.phone != null)
-                Text(
-                  widget.phone != null ? widget.phone.toString() : '',
-                  style: const TextStyle(fontSize: 16),
-                )
-              else
-                SkeletonAnimation(
-                  child: Container(
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: radius,
-                    ),
-                  ),
-                ),
-              const SizedBox(
-                height: 15,
+              const Text(
+                'Имя: ',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              if (widget.email != null)
-                Text(
-                  widget.email != null ? widget.email.toString() : '',
-                  style: const TextStyle(fontSize: 16),
-                )
-              else
-                SkeletonAnimation(
-                  child: Container(
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: radius,
-                    ),
-                  ),
-                ),
+              Text(
+                widget.name ?? '',
+                style: TextStyle(fontSize: 16),
+              ),
             ],
-          )
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            children: [
+              const Text(
+                'Номер телефона: ',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                widget.phone ?? '',
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Row(
+            children: [
+              const Text(
+                'E-Mail адрес: ',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                widget.email ?? '',
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
         ],
       ),
     );

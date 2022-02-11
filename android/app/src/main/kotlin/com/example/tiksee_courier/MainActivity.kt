@@ -1,4 +1,4 @@
-package com.example.tiksee_courier
+package com.tiksee.courier
 
 import io.flutter.embedding.android.FlutterActivity
 

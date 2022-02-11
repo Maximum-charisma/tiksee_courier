@@ -3,6 +3,7 @@ import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:tiksee_courier/services/constants.dart';
 import 'package:tiksee_courier/services/models/auth.dart';
+import 'package:tiksee_courier/services/models/orders.dart';
 import 'package:tiksee_courier/services/models/user.dart';
 import 'package:tiksee_courier/services/prefs_handler.dart';
 
@@ -62,13 +63,23 @@ class NetHandler {
     return data != null ? authFromJson(data) : null;
   }
 
-  static Future<User?> getCourier(context) async {
+  static Future<Courier?> getCourier(context) async {
     var data = await request(
       context: context,
       url: 'user',
       method: Method.get,
       params: {},
     );
-    return data != null ? userFromJson(data) : null;
+    return data != null ? courierFromJson(data) : null;
+  }
+
+  static Future<List<Orders>?> getOrders(context, order, limit, offset) async {
+    var data = await request(
+      context: context,
+      url: 'courier/orders',
+      method: Method.get,
+      params: {"order": order, "limit": limit, "offset": offset},
+    );
+    return data != null ? ordersFromJson(data) : null;
   }
 }

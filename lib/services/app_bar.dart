@@ -8,7 +8,7 @@ class StandartAppBar extends StatelessWidget {
     this.actions,
     this.leading,
     this.automaticallyImplyLeading = true,
-    this.color = Colors.white,
+    this.color,
   });
 
   final Widget? title;
@@ -17,7 +17,7 @@ class StandartAppBar extends StatelessWidget {
   final List<Widget>? actions;
   final double expandedHeight;
   final bool automaticallyImplyLeading;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class StandartAppBar extends StatelessWidget {
       centerTitle: true,
       leading: leading,
       expandedHeight: expandedHeight,
-      backgroundColor: color,
+      backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       shadowColor: Colors.grey.withOpacity(0.15),
       title: title,
       flexibleSpace: flexibleSpace,
